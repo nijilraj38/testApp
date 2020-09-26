@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.axnol.testapp.viewmodel.AuthViewModel"
+
+            />
+
+
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/Relative_layout_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/box_inset_layout_padding"
+        tools:context=".Login_activity"
+        tools:deviceIds="wear">
+
+
+        <Button
+            android:id="@+id/button1"
+            android:onClick="@{viewmodel::onClickSignIn}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextTextPassword"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="163dp"
+            android:backgroundTint="#FFFFFF"
+            android:foregroundTint="#2E3032"
+            android:text="Button" />
+
+        <EditText
+            android:text="@={viewmodel.email}"
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="307dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:text="@={viewmodel.password}"
+            android:layout_width="333dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextTextPersonName2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginRight="25dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+    </RelativeLayout>
+
+
+</layout>
+
